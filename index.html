@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Meu Amor 🖤</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Helvetica:wght@900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #5e17eb;
+      background-image: linear-gradient(45deg, black 25%, transparent 25%), 
+                        linear-gradient(-45deg, black 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, black 75%), 
+                        linear-gradient(-45deg, transparent 75%, black 75%);
+      background-size: 40px 40px;
+      background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 4em;
+      font-family: 'Helvetica', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    .slideshow {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      margin: 20px auto;
+      border: 4px solid black;
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+      background-color: black;
+    }
+
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .nav-button.left {
+      left: 10px;
+    }
+
+    .nav-button.right {
+      right: 10px;
+    }
+
+    .message {
+      margin: 30px;
+      font-size: 1.3em;
+    }
+
+    .timer {
+      font-size: 1.5em;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .video-thumbnail {
+      margin: 30px auto;
+      width: 90%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+      border-radius: 10px;
+      background: url('https://img.youtube.com/vi/AW3RspM7v9M/maxresdefault.jpg') center center / cover no-repeat;
+      position: relative;
+    }
+
+    .video-thumbnail::after {
+      content: '\25BA';
+      color: white;
+      font-size: 60px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      padding: 20px;
+    }
+
+    .video-thumbnail:hover {
+      cursor: pointer;
+    }
+
+     .references {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 50px;
+      gap: 20px;
+    }
+
+    .references img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid white;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Two Is Better Than One 💜</h1>
+
+  <div class="slideshow">
+    <button class="nav-button left" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="nav-button right" onclick="plusSlides(1)">&#10095;</button>
+    <img src="img1.jpeg" style="display: block;">
+    <img src="img2.jpeg">
+    <img src="img3.jpeg">
+    <img src="img4.jpeg">
+    <img src="img5.jpeg">
+    <img src="img6.jpeg">
+    <img src="img7.jpeg">
+    <img src="img8.jpeg">
+    <img src="img9.jpeg">
+    <img src="img10.jpeg">
+    <img src="img11.jpeg">
+    <img src="img12.jpeg">
+    <img src="img13.jpeg">
+    <img src="img14.jpeg">
+    <img src="img15.jpeg">
+    <img src="img16.jpeg">
+    <img src="img17.jpeg">
+    <img src="img18.jpeg">
+    <img src="img19.jpeg">
+    <img src="img20.jpeg">
+    <img src="img21.jpeg">
+    <img src="img22.jpeg">
+  </div>
+
+  <div class="timer" id="relationship-timer"></div>
+
+  <div class="message">
+    Oiiii, meu amorzão 💕
+  </div>
+    Obrigado por estar ao meu lado durante todo esse tempo.
+  <div>
+    Cada momento com você faz a vida mais leve, mais bonita, mais completa.
+  </div>
+    Essa página é um pedacinho da nossa história, para que você possa sempre reviver tudo o que já vivemos juntos.
+  <div>
+    Te amo mais do que palavras podem dizer.
+  </div>
+    E que venham muitos e muitos momentos a mais, porque tudo é melhor quando é com você. 💖
+  </div>
+
+  <div class="video-thumbnail" onclick="window.open('https://youtu.be/AW3RspM7v9M', '_blank')"></div>
+
+    <div class="references">
+    <img src="pulseira.png" alt="Pulseira Lollapalooza">
+    <img src="guitarra.png" alt="Guitarra Vermelha">
+    <img src="vinil.png" alt="Disco de Vinil">
+  </div>
+
+  <script>
+    // Slideshow
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slideshow img");
+
+    function showSlides() {
+      slides.forEach((img, i) => {
+        img.style.display = i === slideIndex ? "block" : "none";
+      });
+    }
+
+    function plusSlides(n) {
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      showSlides();
+    }
+
+    setInterval(() => plusSlides(1), 5000);
+    showSlides();
+
+    // Timer com anos, meses, dias
+    const startDate = new Date("2020-09-12T02:00:00");
+
+    function updateTimer() {
+      const now = new Date();
+      let years = now.getFullYear() - startDate.getFullYear();
+      let months = now.getMonth() - startDate.getMonth();
+      let days = now.getDate() - startDate.getDate();
+      let hours = now.getHours() - startDate.getHours();
+      let minutes = now.getMinutes() - startDate.getMinutes();
+      let seconds = now.getSeconds() - startDate.getSeconds();
+
+      if (seconds < 0) { seconds += 60; minutes--; }
+      if (minutes < 0) { minutes += 60; hours--; }
+      if (hours < 0) { hours += 24; days--; }
+      if (days < 0) {
+        months--;
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += prevMonth.getDate();
+      }
+      if (months < 0) { months += 12; years--; }
+
+      document.getElementById("relationship-timer").textContent =
+        `Estamos juntos há ${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos 💘`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+</body>
+</html>
